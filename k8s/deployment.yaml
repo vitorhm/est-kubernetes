@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: estudo
+spec:
+  template:
+    metadata:
+      name: estudo
+      labels:
+        app: estudo
+    spec:
+      containers:
+        - name: estudo
+          image: vitorhm/est-kubernetes:1.0
+          ports:
+            - containerPort: 8080
+  replicas: 3
+  selector:
+    matchLabels:
+      app: estudo

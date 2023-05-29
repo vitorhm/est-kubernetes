@@ -1,0 +1,16 @@
+version: '3'
+services:
+  api:
+    image: vitorhm/est-kubernetes:${API_VERSION}
+    ports:
+      - '8080:8080'
+
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: est
+      MYSQL_USER: est
+      MYSQL_PASSWORD: est
+    ports:
+      - '3306:3306'

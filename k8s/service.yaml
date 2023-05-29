@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: estudo
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: estudo
   ports:
-  - port: 8081
+  - port: 8080
     targetPort: 8080
+    nodePort: 30000
